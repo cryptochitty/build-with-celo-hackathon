@@ -9,13 +9,15 @@ Please [__fork this repo__](https://help.github.com/articles/fork-a-repo/) and u
 ##### India
 
 ##### Team Members
-- Teammate 1, role
-- Teammate 2, role
-- Teammate 3, role
+- Ragunanadan, Technical Head
+- Narendran, Tecnical & Support
+- Avina, social media and program coordination
 
 #### Project Description
-Provide a clear statement of the challenges/issues/problems/gaps your project engages as well as a brief, high-level description of how your project engages the areas you've identified. What is the value of your approach? Who are the intended users?
 
+Celo ticket Objective: To implement ticket nft concept in the programs like conferences, seminars, training programs. Initially the key stack holders of this idea is program organizers and participants.
+
+in future it can be extended to refi and social cause
 #### Summary
 Describe the basic functionality of your project. What are the features you were able to implement? What features would you like to implement?
 
