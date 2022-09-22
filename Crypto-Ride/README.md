@@ -15,15 +15,15 @@ Chitty Babu, testing, co-ordintation
 
 ## Project Description
 
- Introducing Celo Ticket, a new web3 way of connecting event host and event guest in issuing paperless tickets as NFT and a small step in reducing the carbon foot print. Celo tickes aka NFTs will be managed and controlled by smart contracts hosted on the Celo network. A program that can target media outlets or firms to bring a sense of connect between them and the event guests. 
+ Introducing Celo Ticket, a new web3 way of connecting event host and event guest in issuing paperless tickets as NFT and a small step in reducing the carbon foot print. Celo tickes aka NFTs will be managed and controlled by smart contracts hosted on the Celo network. A program that can target media outlets or event organizing firms to bring a sense of connect between them and the event participants. 
  
  
 ### Challenges
 
 <b>Need a way to find those who bought tickets and actually attended</b>
 
-When a guest attends a ticket for a event where the charge is minimal or zero, we we would like to find a way to differentiate the once who attended
-and then one who gave a skip. The reason being the one who attended may have more inclination and the goal of the event.
+When a guest attends a event where the ticket charge is minimal or zero, we we would like to find a way to differentiate the once who attended
+and then one who gave a skip. The reason being the one who attended may have more inclination and the goal of the event and his/her participation should be recognized.
 
 
 
