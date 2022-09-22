@@ -9,9 +9,11 @@
 
 #### Team Members 
 
-Rahu Nandan, smart contract developer
-Narendiran , front-end, integration
-Chitty Babu, testing, co-ordintation
+
+Ragunanadan, Technical Head
+Narendiran, Tecnical & Support
+Avina, social media and program coordination
+
 
 ## Project Description
 
