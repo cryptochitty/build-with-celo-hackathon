@@ -32,7 +32,7 @@ and then one who gave a skip. The reason being the one who attended may have mor
 
 ### Why on the Celo network?
 
-- The Celo Network is bes
+- The Celo Network is best when it comes to Mobile environment. This aligns with the future plans of celo ticket to integrate with mobile app.
 
 
 ### What is needed?
