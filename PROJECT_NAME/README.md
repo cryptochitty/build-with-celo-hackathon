@@ -1,33 +1,63 @@
 
-# ⚡ Hackathon Project Template ⚡
-_This is a sample submission repository.
-Please [__fork this repo__](https://help.github.com/articles/fork-a-repo/) and use this as a starting point for your hackathon project._
+# Celo Ticket
 
-## Project Name
-### Team name
-#### Hackathon Track
+## BHC On the Ramp
 
-##### Region location
+### Hackathon Track: NFT
 
-##### Team Members
-- Teammate 1, role
-- Teammate 2, role
-- Teammate 3, role
+#### 
 
-#### Project Description
-Provide a clear statement of the challenges/issues/problems/gaps your project engages as well as a brief, high-level description of how your project engages the areas you've identified. What is the value of your approach? Who are the intended users?
+#### Team Members 
+
+Rahu Nandan, smart contract developer
+Narendiran , front-end, integration
+Chitty Babu, testing, co-ordintation
+
+## Project Description
+
+ Introducing Celo Ticket, a new web3 way of connecting event host and event guest in issuing paperless tickets as NFT and a small step in reducing the carbon foot print. Celo tickes aka NFTs will be managed and controlled by smart contracts hosted on the Celo network. A program that can target media outlets or event organizing firms to bring a sense of connect between them and the event participants. 
+ 
+ 
+### Challenges
+
+<b>Need a way to find those who bought tickets and actually attended</b>
+
+When a guest attends a event where the ticket charge is minimal or zero, we we would like to find a way to differentiate the once who attended
+and then one who gave a skip. The reason being the one who attended may have more inclination and the goal of the event and his/her participation should be recognized.
+
+
+
+
+### Why on the Celo network?
+
+- The Celo Network is bes
+
+
+### What is needed?
+
+- <b>TODO</b>
+ 
+
+### Who would use this?
 
 #### Summary
-Describe the basic functionality of your project. What are the features you were able to implement? What features would you like to implement?
 
-#### URLs
-List any URLs relevant to demonstrating your prototype
+The most basic functionality of this project is just a smart contract with an website. Smart contract handles the minting of NFTs and distribution.
+The website allows the event host to post the upcoming events.
+Event guests use the website to purchase tickets and view their NFTs
 
-#### Presentation
-List any links to your presentation or any related visuals you want to share.
+## Presentation
 
-#### Next Steps
-What do you need to do next to turn this prototype into a working solution?
+- <b>TODO</b>
 
-#### License
-This repository includes an [unlicensed](http://unlicense.org/) statement though you may want to [choose a different license](https://choosealicense.com/).
+
+
+
+## Next Steps
+- <b>TODO</b>
+
+
+
+## Licence
+
+- <b>TODO</b>
