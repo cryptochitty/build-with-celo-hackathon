@@ -88,5 +88,16 @@ describe("EventManager", function () {
       expect(approvedEvent.approved).to.equal(true);
 
     });
-  });  
+    
+    it("test case for non existing event", async function () {
+      const { ID, eventMgr, account1} = await loadFixture(deployEventManagerFixture);
+      await expect(eventMgr.getEvent(5)).to.be.revertedWith(
+        "Event does not exist or already approved"
+      );
+
+      await expect(eventMgr.getApprovedEvent(5)).to.be.revertedWith(
+        "Event does not exist or is not approved"
+      );
+    });
+   });  
 });

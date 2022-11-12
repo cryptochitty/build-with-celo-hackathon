@@ -53,11 +53,13 @@ contract EventManager {
      }
  
      modifier eventExist(uint _eventId) {
+        require(_eventId > 0, "Invalid bounds");
         require(upcomingEvents[_eventId].eventDate != 0, 'Event does not exist or already approved');
         _;
      }
 
      modifier IsApprovedEvent(uint _eventId) {
+        require(_eventId > 0, "Invalid bounds");
         require(approvedEvents[_eventId].eventDate != 0 && approvedEvents[_eventId].approved == true, 'Event does not exist or is not approved');
         _;
      }
