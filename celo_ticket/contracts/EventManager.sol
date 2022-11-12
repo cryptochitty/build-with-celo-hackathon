@@ -1,10 +1,12 @@
+// SPDX-License-Identifier: Unlicense
 pragma solidity 0.8.17;
 import "./Data.sol";
  
 contract EventManager {
      mapping(address=>bool) public owners;
      mapping(uint => Event) public upcomingEvents;
-     mapping(uint => Event) public newEvents;
+     mapping(uint => Event) public approvedEvents;
+     
      uint public nextId;
      constructor(address _owner) {
          owners[_owner] = true;
@@ -17,19 +19,32 @@ contract EventManager {
      }
           
      function registerEvent(string calldata _name, address payable _eventOwner, uint _eventDate) external {
-            require(_eventDate > block.timestamp, 'can only organize event at a future date');
-            Event storage newEvent = newEvents[nextId++];
-            newEvent.name = _name;
-            newEvent.eventOwner = _eventOwner;
-            newEvent.eventDate = _eventDate;
-            newEvent.mintStatus = false;
-            newEvent.approved = false;
+            require(_eventDate > block.timestamp, 'can only organize event for a future date');
+            Event memory newEvent = Event({ name: _name,
+                eventOwner:_eventOwner,
+                eventDate: _eventDate,
+                mintStatus: false,
+                approved:false
+            });
+            upcomingEvents[nextId] = newEvent;
+            nextId++;
+     }
+
+     function getEvent(uint _eventId) eventExist(_eventId) view external returns(Event memory) {
+        Event storage existingEvent = upcomingEvents[_eventId];
+        return existingEvent;
+     }
+
+     function getApprovedEvent(uint _eventId) IsApprovedEvent(_eventId) view external returns(Event memory) {
+        Event storage approvedEvent = approvedEvents[_eventId];
+        return approvedEvent;
      }
  
-     function approveEvent(uint _eventId) isOwner(msg.sender) isNonApprovedEvent(_eventId) external {
-        Event storage eventToApprove = newEvents[_eventId];
+     function approveEvent(uint _eventId) isOwner(msg.sender) eventExist(_eventId) external  {
+        Event storage eventToApprove = upcomingEvents[_eventId];
         eventToApprove.approved =  true;
-        delete newEvents[_eventId];
+        approvedEvents[_eventId] = eventToApprove;
+        delete upcomingEvents[_eventId];
      }
  
      modifier isOwner(address _owner) {
@@ -37,9 +52,13 @@ contract EventManager {
         _;
      }
  
-     modifier isNonApprovedEvent(uint _eventId) {
-        require(newEvents[_eventId].eventDate != 0, 'Event does not exist');
+     modifier eventExist(uint _eventId) {
+        require(upcomingEvents[_eventId].eventDate != 0, 'Event does not exist or already approved');
         _;
      }
- 
+
+     modifier IsApprovedEvent(uint _eventId) {
+        require(approvedEvents[_eventId].eventDate != 0 && approvedEvents[_eventId].approved == true, 'Event does not exist or is not approved');
+        _;
+     }
 }

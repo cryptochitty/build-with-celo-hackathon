@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Unlicense
 pragma solidity 0.8.17;
  
 struct eventParticipant {
@@ -10,9 +11,6 @@ struct Event {
      string name;
      uint eventDate;
      address payable eventOwner;
-     address eventNFT;
      bool mintStatus;
      bool approved;
-     uint amount;
-     mapping(address=>eventParticipant) participants;
 }
