@@ -13,7 +13,7 @@ contract EventManager {
          nextId = 10000000;
      }
  
-     function addOwner(address _newOwner) isOwner(msg.sender)  external  {
+     function addOwner(address _newOwner) isOwner(msg.sender) external  {
          require(owners[_newOwner] != true, 'address already exists');
          owners[_newOwner] = true;
      }

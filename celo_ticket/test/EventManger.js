@@ -1,8 +1,6 @@
 const {
-  time,
   loadFixture,
 } = require("@nomicfoundation/hardhat-network-helpers");
-const { anyValue } = require("@nomicfoundation/hardhat-chai-matchers/withArgs");
 const { expect } = require("chai");
 
 describe("EventManager", function () {
@@ -30,7 +28,7 @@ describe("EventManager", function () {
       expect(await eventMgr.owners(account1.address)).to.equal(false);
     });
 
-    it("Add add account1 as owner and ownership test pass. account2 should fail", async function () {
+    it("Add account1 as owner, account1 ownership test pass. account2 should fail", async function () {
       const { ID, eventMgr, account1, account2 } = await loadFixture(deployEventManagerFixture);
       await eventMgr.addOwner(account1.address)
       expect(await eventMgr.owners(account1.address)).to.equal(true);
