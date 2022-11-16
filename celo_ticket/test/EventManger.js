@@ -52,12 +52,12 @@ describe("EventManager", function () {
       expect(await eventMgr.nextId()).to.equal(ID);
       await eventMgr.registerEvent("Test Event", account1.address, eventTimeNextMonth);
       expect(await eventMgr.nextId()).to.equal(ID + 1);
-      const existingEvent = await eventMgr.getEvent(ID)
-      expect(existingEvent.name).to.equal('Test Event');
-      expect(existingEvent.eventOwner).to.equal(account1.address);
-      expect(existingEvent.mintStatus).to.equal(false);
-      expect(existingEvent.approved).to.equal(false);
-      expect(existingEvent.eventDate).to.equal(eventTimeNextMonth);
+      const existingEventDetail = await eventMgr.getEvent(ID)
+      expect(existingEventDetail.name).to.equal('Test Event');
+      expect(existingEventDetail.eventOwner).to.equal(account1.address);
+      expect(existingEventDetail.mintStatus).to.equal(false);
+      expect(existingEventDetail.approved).to.equal(false);
+      expect(existingEventDetail.eventDate).to.equal(eventTimeNextMonth);
     });
 
     it("register event for next month and approve", async function () {
@@ -69,8 +69,8 @@ describe("EventManager", function () {
       await eventMgr.registerEvent("Test Event", account1.address, eventTimeNextMonth);
       expect(await eventMgr.nextId()).to.equal(ID + 1);
 
-      const existingEvent = await eventMgr.getEvent(ID)
-      expect(existingEvent.approved).to.equal(false);
+      const existingEventDetail = await eventMgr.getEvent(ID)
+      expect(existingEventDetail.approved).to.equal(false);
 
       await expect(eventMgr.getApprovedEvent(ID)).to.be.revertedWith(
         "Event does not exist or is not approved"
@@ -82,8 +82,8 @@ describe("EventManager", function () {
         "Event does not exist or already approved"
       );
 
-      const approvedEvent = await eventMgr.getApprovedEvent(ID)
-      expect(approvedEvent.approved).to.equal(true);
+      const approvedEventDetail = await eventMgr.getApprovedEvent(ID)
+      expect(approvedEventDetail.approved).to.equal(true);
 
     });
     

@@ -7,7 +7,7 @@ struct eventParticipant {
      string email;
 }
  
-struct Event {
+struct EventDetail {
      string name;
      uint eventDate;
      address payable eventOwner;

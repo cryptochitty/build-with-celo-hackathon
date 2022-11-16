@@ -4,8 +4,8 @@ import "./Data.sol";
  
 contract EventManager {
      mapping(address=>bool) public owners;
-     mapping(uint => Event) public upcomingEvents;
-     mapping(uint => Event) public approvedEvents;
+     mapping(uint => EventDetail) public upcomingEvents;
+     mapping(uint => EventDetail) public approvedEvents;
      
      uint public nextId;
      constructor(address _owner) {
@@ -20,28 +20,28 @@ contract EventManager {
           
      function registerEvent(string calldata _name, address payable _eventOwner, uint _eventDate) external {
             require(_eventDate > block.timestamp, 'can only organize event for a future date');
-            Event memory newEvent = Event({ name: _name,
+            EventDetail memory newEventDetail = EventDetail({ name: _name,
                 eventOwner:_eventOwner,
                 eventDate: _eventDate,
                 mintStatus: false,
                 approved:false
             });
-            upcomingEvents[nextId] = newEvent;
+            upcomingEvents[nextId] = newEventDetail;
             nextId++;
      }
 
-     function getEvent(uint _eventId) eventExist(_eventId) view external returns(Event memory) {
-        Event storage existingEvent = upcomingEvents[_eventId];
-        return existingEvent;
+     function getEvent(uint _eventId) eventExist(_eventId) view external returns(EventDetail memory) {
+        EventDetail storage existingEventDetail = upcomingEvents[_eventId];
+        return existingEventDetail;
      }
 
-     function getApprovedEvent(uint _eventId) IsApprovedEvent(_eventId) view external returns(Event memory) {
-        Event storage approvedEvent = approvedEvents[_eventId];
-        return approvedEvent;
+     function getApprovedEvent(uint _eventId) IsApprovedEvent(_eventId) view external returns(EventDetail memory) {
+        EventDetail storage approvedEventDetail = approvedEvents[_eventId];
+        return approvedEventDetail;
      }
  
      function approveEvent(uint _eventId) isOwner(msg.sender) eventExist(_eventId) external  {
-        Event storage eventToApprove = upcomingEvents[_eventId];
+        EventDetail storage eventToApprove = upcomingEvents[_eventId];
         eventToApprove.approved =  true;
         approvedEvents[_eventId] = eventToApprove;
         delete upcomingEvents[_eventId];
